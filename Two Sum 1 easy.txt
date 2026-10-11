@@ -1,0 +1,19 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++){
+            int substractValue = target - nums[i];
+
+           // If value present then return their index 
+           if(map.containsKey(substractValue)){
+            return new int[] {map.get(substractValue), i};
+           }
+
+           // If value not present in map then add into map
+           map.put(nums[i], i);
+
+        }
+        return new int []{};
+    }
+}
