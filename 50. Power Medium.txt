@@ -1,0 +1,32 @@
+// First run this code, this code execute 307 case successfully. 
+// For run all test case use inbuilt Method of Math Class.
+
+class Solution {
+    public double myPow(double x, int n) {
+        double result = 1.0;
+        long power = n;
+
+        if (power < 0) {
+            x = 1 / x;
+            power = -power;
+        }
+
+        while (power > 0) {
+            if (power % 2 == 1) {
+                result = result * x;
+            }
+            x = x * x;
+            power = power / 2;
+        }
+
+        return result;
+    }
+}
+
+// This will execute all case successfully
+
+class Solution {
+    public double myPow(double x, int n) {
+      return Math.pow(x, n);
+    }
+}
