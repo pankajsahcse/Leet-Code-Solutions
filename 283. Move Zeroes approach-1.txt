@@ -1,0 +1,20 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int left = 0;
+        int right = 0;
+
+      // right pointer will traverse at the last index
+        while (right < nums.length) {
+            // if we found arr[right] is non zero than swap with arr[left]
+            if (nums[right] != 0) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                // after swap left pointer will be increase by 1
+                left++;
+            }
+            
+            right++;
+        }
+    }
+}
