@@ -1,0 +1,16 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+
+        for(int i = 0; i < nums.length; i++){
+            // If target is matched then i return
+            if(nums[i] == target){
+                return i;
+            }
+    // if target is not matched and nums[i] greater than i then that position target inserted
+            if(nums[i] > target){
+                return i;
+            }
+        }
+        return nums.length;
+    }
+}
