@@ -1,0 +1,31 @@
+class Solution {
+    public String addBinary(String a, String b) {
+
+        StringBuilder result = new StringBuilder();
+
+        int i = a.length() -1;
+        int j = b.length() -1;
+        int carry = 0;
+
+        while(i >= 0 || j >= 0 || carry >0){
+             int sum = carry;
+            // if index is greater than 0
+            if(i >= 0){
+                // if we get 1 as string than convert into int, ASCII value of 1 = 49, 0 = 48
+                sum = sum + a.charAt(i) - '0'; 
+                i--;
+            }
+            if(j >=0){
+                sum = sum + b.charAt(j) - '0';
+                j--;
+            }
+            // 1 + 1 + carry(0) = 2, then sum % 2 = 0, result store 0
+            int val = sum % 2;
+            result.append(val);
+
+            carry = sum / 2;
+
+        }
+          return result.reverse().toString();
+    }
+}
