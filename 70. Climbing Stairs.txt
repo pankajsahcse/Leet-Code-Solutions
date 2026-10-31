@@ -1,0 +1,14 @@
+class Solution {
+    public int climbStairs(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        int[] dynamicProgram = new int[n + 1];
+        dynamicProgram[0] = 1;
+        dynamicProgram[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            dynamicProgram[i] = dynamicProgram[i - 1] + dynamicProgram[i - 2];
+        }
+        return dynamicProgram[n];
+    }
+}
