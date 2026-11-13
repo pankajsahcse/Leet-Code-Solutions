@@ -1,0 +1,8 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        char ch = 0;
+        for(char sc :s.toCharArray()) ch ^= sc;
+        for(char tc :t.toCharArray()) ch ^= tc;
+        return ch;
+    }
+}
